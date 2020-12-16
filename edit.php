@@ -28,13 +28,14 @@ $stmt->execute(array(
     }
  
 }
+
 }
 
-    
-    $id = $_GET["value"];
-    $sth = $conn->prepare("SELECT * FROM Profile WHERE profile_id = $id  ");
-    $sth->execute();
-    foreach($sth as $row)
+$id = $_GET["value"];
+$sth = $conn->prepare("SELECT * FROM Profile WHERE profile_id = $id  ");
+$sth->execute();
+foreach($sth as $row)
+
 
 
 ?>

@@ -44,7 +44,7 @@ foreach($sth as $row)
 <td><?php echo $row['last_name']; ?></td>
 <div id = "edit" style="display:none">
 <!-- <td><a href="edit.php" >edit</a> <a href="login.php" >delete</a></td> -->
-<td><?php echo"<a href=\"edit.php?value=" . urlencode($row['profile_id'])."\">".'Edit'."</a>"; echo" <a href=\"edit.php?value=" . urlencode($row['profile_id'])."\">".'Delete'."</a>"; ?></td>
+<td><?php echo"<a href=\"edit.php?value=" . urlencode($row['profile_id'])."\">".'Edit'."</a>"; echo" <a href=\"delete.php?value=" . urlencode($row['profile_id'])."\">".'Delete'."</a>"; ?></td>
 
 </div>
 </tr>

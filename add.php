@@ -29,6 +29,8 @@ $stmt->execute(array(
   ':he' => $_POST['headline'],
   ':su' => $_POST['summary'])
 );
+header("Location: index.php");
+        return;
 }
 ?>
 
