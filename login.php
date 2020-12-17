@@ -20,7 +20,7 @@
             header("location:login.php");
             return;
         }
-    }
+    
      $check = hash('md5', $salt.$_POST['password']);
 
      $stmt = $conn->prepare('SELECT user_id, name FROM users
@@ -43,26 +43,31 @@
 
     return;
     }
+    else{
+        echo ("<script LANGUAGE='JavaScript'>
+        window.alert('Email or Password is incorrect!');
+        window.location.href='login.php';
+        </script>");
+    }
 
-    // else{
-
-    //     header("Location: login.php");
-
-    //     return ;
-    // }
-
+    }
+    
 ?>
 
 <!DOCTYPE html>
 <html>
+<head>
+<link rel="stylesheet"type="text/css"href="style.css">
+  <title>Uditha Janadara</title>
+</head>
 <body>
 
 <form method = "post" action = "login.php">
 
 <input type = "text" placeholder = "Email" id = "email" name = "email"> <br>
-<input type = "text" placeholder = "password" id = "password" name = "password"> <br>
-<input type = "submit" onclick = "doValidate()" value = "login">
-<input type = "submit" name = "cancel" value = "cancel">
+<input type = "password" placeholder = "password" id = "password" name = "password"> <br>
+<input type = "submit" class="button" onclick = "doValidate()" value = "login">
+<input type = "submit" class="button" name = "cancel" value = "cancel">
 
 </form>
 

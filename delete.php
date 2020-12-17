@@ -4,6 +4,10 @@ include("connection.php");
 
 session_start();
 
+if (isset($_POST['cancel'])){
+    header('location:index.php');
+    return;
+}
 
 if(isset($_SESSION['name'])){
 
@@ -36,6 +40,15 @@ if(isset($_SESSION['name'])){
 }
 }
 
+else{
+
+    echo ("<script LANGUAGE='JavaScript'>
+    window.alert('You are not logged in!');
+    window.location.href='index.php';
+    </script>");
+}
+
+
     $id = $_GET["value"];
     $sth = $conn->prepare("SELECT * FROM Profile WHERE profile_id = $id  ");
     $sth->execute();
@@ -61,6 +74,10 @@ if(isset($_SESSION['name'])){
 
 <!DOCTYPE html>
 <html>
+<head>
+<link rel="stylesheet"type="text/css"href="style.css">
+  <title>Uditha Janadara</title>
+</head>
 <body>
 
 <form method = "post" action = "delete.php">
@@ -68,8 +85,8 @@ if(isset($_SESSION['name'])){
 <input type = "text" placeholder = "First name" value = <?php echo $row['first_name']; ?> id = "fname" name = "fname"> <br>
 <input type = "text" placeholder = "Last name" value = <?php echo $row['last_name']; ?>  id = "lname" name = "lname"> <br>
 <?php  $_SESSION['pid'] = $_GET["value"]; ?>
-<input type = "submit" value = "Delete">
-<input type = "submit" name = "cancel" value = "cancel">
+<input type = "submit"  class="button" value = "Delete">
+<input type = "submit"  class="button" name = "cancel" value = "cancel">
 
 </form>
 

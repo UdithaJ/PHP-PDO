@@ -1,0 +1,37 @@
+
+ input[type=text],[type=password]{
+  width: 370px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 3px solid rgb(1, 12, 1);
+  border-radius: 4px;
+  background-color:	#c8e2c8;
+  box-sizing:border-box; 
+}
+
+
+table{
+    border: 1px solid black;
+    background-color: #aadce2;
+}
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+  .button{
+    background-color:#1f7ead;
+    border-radius:5px;
+    width: fit-content;
+	border:2px solid #5469c7;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+    padding:7px 15px;
+    margin-top: 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2358c2;
+  }
