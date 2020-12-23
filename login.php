@@ -13,15 +13,15 @@
 
     $salt = 'XyZzy12*_';
 
-    if(isset($_POST['email']) && isset($_POST['password'])){
+    if(isset($_POST['email']) && isset($_POST['pass'])){
         
-        if(strlen($_POST['email']) < 1 || strlen($_POST['password']) < 1){
+        if(strlen($_POST['email']) < 1 || strlen($_POST['pass']) < 1){
             $_SESSION['error'] = "Email and Password are required";
             header("location:login.php");
             return;
         }
     
-     $check = hash('md5', $salt.$_POST['password']);
+     $check = hash('md5', $salt.$_POST['pass']);
 
      $stmt = $conn->prepare('SELECT user_id, name FROM users
      WHERE email = :em AND password = :pw');
@@ -65,8 +65,8 @@
 <form method = "post" action = "login.php">
 
 <input type = "text" placeholder = "Email" id = "email" name = "email"> <br>
-<input type = "password" placeholder = "password" id = "password" name = "password"> <br>
-<input type = "submit" class="button" onclick = "doValidate()" value = "login">
+<input type = "password" placeholder = "password" id = "password" name = "pass"> <br>
+<input type = "submit" class="button" onclick = "doValidate()" value = "Log In">
 <input type = "submit" class="button" name = "cancel" value = "cancel">
 
 </form>

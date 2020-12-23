@@ -20,6 +20,7 @@ if(isset($_SESSION['name'])){
 
 $sth = $conn->prepare("SELECT * FROM Profile");
 $sth->execute();
+echo "added";
 ?>
 
 
@@ -46,7 +47,6 @@ foreach($sth as $row)
 {
 ?>
 <tr>
-
 <td><?php echo"<a href=\"view.php?value=" . urlencode($row['profile_id'])."\">".$row['first_name']. " " .$row['last_name']."</a>"; ?> </td>
 <td><?php echo $row['headline']; ?></td>
 <td><?php echo"<a href=\"edit.php?value=" . urlencode($row['profile_id'])."\">".'Edit'."</a>"; echo" <a href=\"delete.php?value=" . urlencode($row['profile_id'])."\">".'Delete'."</a>"; ?></td>
@@ -60,8 +60,7 @@ foreach($sth as $row)
 
 <br>
 <a href="login.php" class="button" id = "link">Please log in</a>
-<p><a href="login.php">Please log in</a></p>
-<a href="add.php" class="button" id = "add" style="display:none">Add New</a>
+<a href="add.php" class="button" id = "add" style="display:none">Add New Entry</a>
 
 
 
